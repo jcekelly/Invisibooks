@@ -6,6 +6,10 @@ import AddBookPage from './pages/AddBookPage';
 import BookInfoPage from './pages/BookInfoPage'
 import SwapPage from './pages/SwapPage'
 import BrowseAllPage from './pages/BrowseAllPage'
+import SignUpPage from './pages/SignUpPage';
+import Login from "./pages/LoginPage";
+
+
 
 
 
@@ -15,6 +19,8 @@ function App() {
 
       <Routes>
         <Route path='/' element={<LoginPage />} />
+        <Route path="/login" element={ <Login /> } />
+        <Route path='/signup' element={<SignUpPage />} />
         <Route path='/add-book' element={<AddBookPage />} />
         <Route path='/browse-all' element={<BrowseAllPage />} />
         <Route path='/book-info' element={<BookInfoPage />} />
