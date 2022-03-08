@@ -12,7 +12,7 @@ export default function Login() {
 
 	const navigate = useNavigate()
 
-	const { storeToken, verifyStoredToken } = useContext(AuthContext)
+	const { storeToken, verifyStoredToken, user } = useContext(AuthContext)
 
 	const handleSubmit = e => {
 		e.preventDefault()
@@ -20,11 +20,13 @@ export default function Login() {
 		axios.post('http://localhost:5005/auth/login', requestBody)
 			.then(response => {
 				const token = response.data.authToken
+				console.log('user', response.data)
 				storeToken(token)
 				verifyStoredToken()
 					.then(() => {
 						console.log('JWT token', response.data.authToken );
 						navigate('/add-book')
+						console.log(user)
 					})
 			})
 			.catch(err => {
@@ -54,3 +56,5 @@ export default function Login() {
 		</>
 	)
 }
+
+

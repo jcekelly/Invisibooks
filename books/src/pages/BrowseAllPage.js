@@ -6,7 +6,7 @@ import AllBooksList from '../components/AllBooksList';
 
 export default function BrowseAllPage() {
 	return (
-        <div>
+        <div className='booklist'>
         <NavSideBar />
 		<AllBooksList />
         </div>

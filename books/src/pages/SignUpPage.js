@@ -6,16 +6,19 @@ export default function Signup() {
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+    const [swapRequests, setSwapRequests] = useState([])
+    const [swapsRequested, setSwapsRequested] = useState([])
 
 	const navigate = useNavigate()
 
 	const handleSubmit = e => {
 		e.preventDefault()
-		const requestBody = { email, password }
+		const requestBody = { email, password, swapRequests, swapsRequested }
 		axios.post('http://localhost:5005/auth/signup', requestBody)
 			.then(response => {
 				// redirect to login
 				navigate('/login')
+                console.log(response)
 			})
 			.catch(err => {
 				const errorDescription = err.response.data.message

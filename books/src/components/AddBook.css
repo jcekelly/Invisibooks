@@ -1,0 +1,12 @@
+/* label {
+    padding: 30px;
+} */
+
+
+
+
+.fiction-radio {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+}
