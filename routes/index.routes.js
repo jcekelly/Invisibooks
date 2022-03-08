@@ -15,9 +15,10 @@ router.get('/', (req, res, next) => {
 // POST route - Add Book
 
 router.post('/books', (req,res,next) => {
-    const {ownerId, fiction, genre, language, tags, description} = req.body;
+    const { fiction, genre, language, tags, description} = req.body;
+    const creator = req.payload._id
 
-    Book.create({ ownerId, fiction, genre, language, tags, description})
+    Book.create({ fiction, genre, language, tags, description, creator})
     .then(book => {
       res.status(201).json(book)
     })
@@ -27,7 +28,7 @@ router.post('/books', (req,res,next) => {
 // get specifc book
 
 router.get('/:id', (req, res, next) => {
-  Project.findById(req.params.id)
+  Book.findById(req.params.id)
     .then(book => {
       if (!book) {
         res.status(404).json(book)
@@ -36,6 +37,9 @@ router.get('/:id', (req, res, next) => {
       }
     })
 });
+
+// request swap 
+
 
 
 module.exports = router;

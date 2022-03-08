@@ -1,30 +1,46 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import './AddBook.css'
+import React, { useState, useContext } from 'react'
+import { Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../context/auth'
 
 const API_URL = "http://localhost:5005";
 
 
 export default function AddBookForm(props) {
-	const [fiction, setFiction] = useState(true)
+	const [fiction, setFiction] = useState(false)
 	const [genre, setGenre] = useState('')
 	const [language, setLanguage] = useState('')
+	const [description, setDescription] = useState('')
+	const [creator, setCreator] = useState('')
+
+    const storedToken = localStorage.getItem('authToken')
+
+	const { storeToken, verifyStoredToken, user } = useContext(AuthContext)
+	console.log(user)
 
 
 	    
 	const handleSubmit = e => {
 		e.preventDefault()
 		
-		axios.post(`http://localhost:5005/api/books`, { fiction, genre, language })
+		axios.post(`http://localhost:5005/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
-			// Reset the state
-			setFiction("");
-			setGenre("");
-			setLanguage("");
+	      console.log(response)
 		  })
 		  .catch((error) => console.log(error));
+		  setFiction("");
+		  setGenre("");
+		  setLanguage("")
+		  getAllBooks()
 	  };
 
+	  const getAllBooks = () => {
+        axios
+          .get(`${API_URL}/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error));
+      };
 	
 
 
@@ -33,14 +49,18 @@ export default function AddBookForm(props) {
 		<p> Add Book </p>
 		<form onSubmit={handleSubmit}>
 
-		<span>
-		 <lable>Fiction</lable>
-		 <label className="switch">
-         <input type="checkbox" onChange={event => setFiction(event.target.value)}/>
-         <span className="slider round"></span>
-         </label>
-		<lable>Non-Fiction</lable>
-	     </span>
+
+		<div className='fiction-radio'>
+		<label for="fiction"> Fiction</label>
+		 <input type="radio" id="fiction" name="fiction" value={true} onChange={e => setFiction(e.target.value)} />
+		 </div>
+		 <div className='fiction-radio'>
+		 <label for="non-fiction"> Non-Fiction</label>
+		 <input type="radio" id="non-fiction" name="fiction" value={false} onChange={e => setFiction(e.target.value)} />
+		 </div>
+
+
+        
 
 		<lable>Genre:</lable>
 		<select name="genre" id="genre" onChange={e => setGenre(e.target.value)} >
@@ -68,21 +88,21 @@ export default function AddBookForm(props) {
 
 		 <lable>Language:</lable>
 		 <select name='language' id='language' onChange={e => setLanguage(e.target.value)}>
-		 <option value=""></option>
 		 <option value="English">English</option>
 		 <option value="French">French</option>
 		 <option value="German">German</option>
 		 <option value="Spanish">Spanish</option>
-		 <option value="Mandarin">Mandarin</option>
 		 <option value="Italian">Italian</option>
-		 <option value="Cantonese">Cantonese</option>
 		 <option value="Swedish">Swedish</option>
 
 		 </select>
+
+		 <lable> Why read this Book? </lable>
+		 <input type='text' maxLength="50" onChange={e => setDescription(e.target.value)}/>
    
 		<button type="submit"> Add this Book</button>
 
-		</form>		
+		</form>		 
 		</>
 
 		// add OwnerID (hidden input?)

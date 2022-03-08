@@ -1,0 +1,36 @@
+
+
+ul {
+    text-align: center;
+    list-style: none;
+    max-width: 200px;
+    min-width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: pink;
+    border-style: dashed;
+
+}
+
+li {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.quote-text {
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.listDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex: wrap;
+    
+}
+
