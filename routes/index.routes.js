@@ -38,7 +38,21 @@ router.get('/:id', (req, res, next) => {
     })
 });
 
-// request swap 
+router.get('/my-books', (req, res, next) => {
+  console.log('test',req.payload)
+  // Book.find({creator: req.payload._id})
+  //   .then(book => {
+  //     if (!book) {
+  //       res.status(404).json(book)
+  //     } else {
+  //       res.status(200).json(book)
+  //     }
+  //   })
+});
+
+
+
+
 
 
 

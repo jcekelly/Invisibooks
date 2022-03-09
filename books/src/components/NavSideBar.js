@@ -10,8 +10,8 @@ export default function NavSideBar() {
        
 		<nav>
         <Link to='/browse-all'> Browse all</Link>
-        <Link to='/add-book'>     Add Book</Link>
-        <Link to='/swap-book'>       Your Swaps</Link>
+        <Link to='/add-book'>   Add Book</Link>
+        <Link to='/your-books'> Your books</Link>
         </nav>
         </>
 
