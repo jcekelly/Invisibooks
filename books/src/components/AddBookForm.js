@@ -1,8 +1,9 @@
 import './AddBook.css'
 import React, { useState, useContext } from 'react'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/auth'
+
 
 const API_URL = "http://localhost:5005";
 
@@ -18,6 +19,8 @@ export default function AddBookForm(props) {
 
 	const { storeToken, verifyStoredToken, user } = useContext(AuthContext)
 	console.log(user)
+
+	const navigate = useNavigate()
 
 
 	    
@@ -42,7 +45,9 @@ export default function AddBookForm(props) {
           .catch((error) => console.log(error));
       };
 	
-
+       const routeChange = () => {
+		   navigate('/browse-all')
+	   }
 
     return (
 		<>
@@ -100,7 +105,7 @@ export default function AddBookForm(props) {
 		 <lable> Why read this Book? </lable>
 		 <input type='text' maxLength="50" onChange={e => setDescription(e.target.value)}/>
    
-		<button type="submit"> Add this Book</button>
+		<button type="submit" onClick={routeChange}> Add this Book</button>
 
 		</form>		 
 		</>
