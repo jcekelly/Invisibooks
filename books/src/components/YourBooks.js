@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { useContext } from 'react'; // <== ADD
-import { AuthContext } from '../context/auth'; 
+
 
 
 
 export default function YourBooks(props) { 
 	
 	const [books, setBooks] = useState([])
+	const [bookID, setBookID] = useState('')
 
     const storedToken = localStorage.getItem('authToken')
-
-	const creator  = useContext(AuthContext)
-
-	const handleDelete = () => {
-		// delete route
-	}
+	
+	
 
 
 
@@ -30,7 +26,12 @@ export default function YourBooks(props) {
         getAllBooks();
       }, [] );
 
-	  
+
+	  const handleDelete = () => {
+		
+		axios.delete(`/api/book/${books._id}`)
+			.catch(err => console.log(err))
+	}
 
     
 
@@ -46,7 +47,13 @@ export default function YourBooks(props) {
             <li> '{book.genre}' </li>
             <li> {book.language} </li> 
 
-			<button onChange={handleDelete}> Delete </button>
+
+
+			<button onClick={ () => {axios.delete(`http://localhost:5005/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+            .then(deletedBook => {
+                console.log(deletedBook)
+            })
+            .catch(err => console.log(err))}}> Delete </button>
 
 
             </ul>

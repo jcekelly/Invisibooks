@@ -37,6 +37,15 @@ router.get('/my-books', (req, res, next) => {
     })
 });
 
+router.delete('/book/:id', (req, res, next) => {
+  Book.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.status(200).json({ message: 'book deleted' })
+    })
+    .catch(err => next(err))
+});
+
+
 
 router.get('/:id', (req, res, next) => {
   Book.findById(req.params.id)
