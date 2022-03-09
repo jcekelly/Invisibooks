@@ -45,13 +45,22 @@ import axios from 'axios';
         return book && (
             <>
             <form ref={form} onSubmit={sendEmail}>
-              <label>book_description</label>
               <input type="hidden" name="book_description" value={book.description} />
-              <label>to_email</label>
               <input type="hidden" name="to_email" value={book.creator.email}/>
-              <label>user email</label>
               <input type="hidden" name="user" value={user.email} />
-              <input type="submit" value="Send" />
+              <div className='emailBorder'>
+              <h3> Hi! </h3>
+
+<h4>I'm interested in the book you described as " {book.description} " </h4>
+
+<h4> If it's still availble, please send me an email and we can discuss collecting it / or organise postage. My emai is:  {user.email} </h4>
+
+<input type="text" name="message" placeholder='Add a note' />
+
+<h3>Thanks!</h3>
+</div>
+              <input type="submit" value="Send Request to Owner" />
+
             </form>
             </>
           );

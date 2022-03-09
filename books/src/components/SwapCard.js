@@ -26,7 +26,7 @@ export default function SwapCard() {
 
     return book && (
 
-		<div>
+		<div className='requestTile'>
         <h3> {book.fiction ? <span>Fiction</span> : <span>Non-Fiction</span>} </h3> 
             <h3> <p className='quote-text'> "{book.description}" </p> </h3>
             <h3> '{book.genre}' </h3>

@@ -7,10 +7,13 @@ import RequestBook from '../components/EmailForm'
 export default function SwapPage() {
 	return (
 		<>
-	     <NavSideBar />
+		 <NavSideBar />
+		<div className='requestPage'>
 		<SwapCard />
 		<RequestBook />
+		</div>
 		</>
+		
 
 	)
 }
