@@ -1,8 +1,3 @@
-import { useState } from 'react';
-import { send } from 'emailjs-com';
-
-function Email() {
-
 // const mailjet = require ('node-mailjet')
 // .connect('1d77e1646541638fd3218ce7d083c619', '76dc3c018f0c0be6fad5e526ad3acf67')
 // const request = mailjet
@@ -34,18 +29,3 @@ function Email() {
 //   .catch((err) => {
 //     console.log(err.statusCode)
 //   })
-
-
-
-   
-
-
-
-
-  return ( 
-      <p>email form</p>
-  )
-     
-}
-
-export default Email;

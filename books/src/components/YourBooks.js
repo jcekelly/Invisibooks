@@ -31,7 +31,6 @@ export default function YourBooks(props) {
       }, [] );
 
 	  
-	console.log(creator)
 
     
 
