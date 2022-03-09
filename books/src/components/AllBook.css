@@ -10,6 +10,7 @@ ul {
     border-width: 3px;
     border-color: pink;
     border-style: dashed;
+    padding: 0px;
 
 }
 
@@ -30,7 +31,9 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    flex: wrap;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin-left: 150px;
     
 }
 

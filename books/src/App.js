@@ -39,12 +39,26 @@ export default App;
 
 
 
-// style both forms nicely 
+// Make email form better 
+
+// deploy 
+
+// write email template
+
+// style both forms 
+
+// style nav, buttons 
+
+// style book cards 
+
+// filters ? 
+
+// think of a name? 
 
 
-// make form submit open browse page 
-// page refresh when deleted 
-// fix book tiles text 
-// add key props to list 
 
-// filters for browse page ? 
+
+
+
+
+
