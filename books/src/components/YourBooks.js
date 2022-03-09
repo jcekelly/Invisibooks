@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import NavSideBar from './NavSideBar';
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -28,11 +29,7 @@ export default function YourBooks(props) {
       }, [] );
 
 
-	  const handleDelete = () => {
-		
-		axios.delete(`/api/book/${books._id}`)
-			.catch(err => console.log(err))
-	}
+	
 
     
 
@@ -53,6 +50,7 @@ export default function YourBooks(props) {
 			<button onClick={ () => {axios.delete(`http://localhost:5005/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(deletedBook => {
                 console.log(deletedBook)
+				window.location.reload()
             })
             .catch(err => console.log(err))}}> Delete </button>
 

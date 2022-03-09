@@ -36,9 +36,6 @@ export default App;
 
 
 
-// fix user id route - how to connect Props.user & the index route 
-// user books page that displays book's with the user's own id w/ delete button (MAKE DELETE ROUTE)
-// implement email form with Mailjet
 
 
 
