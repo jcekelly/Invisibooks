@@ -1,7 +1,7 @@
 import React from 'react'
 import NavSideBar from '../components/NavSideBar'
 import SwapCard from '../components/SwapCard'
-import Email from '../components/EmailForm'
+import RequestBook from '../components/EmailForm'
 
 
 export default function SwapPage() {
@@ -9,7 +9,7 @@ export default function SwapPage() {
 		<>
 	     <NavSideBar />
 		<SwapCard />
-		<Email />
+		<RequestBook />
 		</>
 
 	)

@@ -46,6 +46,7 @@ export default App;
 
 
 // make form submit open browse page 
+// page refresh when deleted 
 // fix book tiles text 
 // add key props to list 
 

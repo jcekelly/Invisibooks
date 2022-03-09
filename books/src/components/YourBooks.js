@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import NavSideBar from './NavSideBar';
 
 
 
@@ -37,7 +38,7 @@ export default function YourBooks(props) {
 
     return (
 		<>
-
+<NavSideBar />
 			<h1>Your Books</h1>
       <div className='listDiv'>
 			{books.map(book => 

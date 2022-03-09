@@ -49,12 +49,15 @@ router.delete('/book/:id', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
   Book.findById(req.params.id)
+  .populate('creator')
     .then(book => {
+      console.log(book)
       if (!book) {
         res.status(404).json(book)
       } else {
         res.status(200).json(book)
       }
+      
     })
 });
 
