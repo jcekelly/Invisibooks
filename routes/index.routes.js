@@ -25,10 +25,9 @@ router.post('/books', (req,res,next) => {
     .catch(err => res.json(err));
 });
 
-// get specifc book
-
-router.get('/:id', (req, res, next) => {
-  Book.findById(req.params.id)
+router.get('/my-books', (req, res, next) => {
+  console.log('test',req.payload)
+  Book.find({creator: req.payload._id})
     .then(book => {
       if (!book) {
         res.status(404).json(book)
@@ -38,7 +37,35 @@ router.get('/:id', (req, res, next) => {
     })
 });
 
-// request swap 
+router.delete('/book/:id', (req, res, next) => {
+  Book.findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.status(200).json({ message: 'book deleted' })
+    })
+    .catch(err => next(err))
+});
+
+
+
+router.get('/:id', (req, res, next) => {
+  Book.findById(req.params.id)
+  .populate('creator')
+    .then(book => {
+      console.log(book)
+      if (!book) {
+        res.status(404).json(book)
+      } else {
+        res.status(200).json(book)
+      }
+      
+    })
+});
+
+
+
+
+
+
 
 
 

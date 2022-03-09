@@ -9,6 +9,7 @@ import BrowseAllPage from './pages/BrowseAllPage'
 import SignUpPage from './pages/SignUpPage';
 import Login from "./pages/LoginPage";
 import Protected from './components/ProtectedPage';
+import YourBooks from './components/YourBooks';
 
 
 
@@ -24,7 +25,7 @@ function App() {
         <Route path='/signup' element={ <SignUpPage />} />
         <Route path='/add-book' element={<Protected> <AddBookPage /> </Protected>} />
         <Route path='/browse-all' element={<Protected> <BrowseAllPage /> </Protected>} />
-        <Route path='/book-info' element={<Protected> <BookInfoPage /> </Protected>} />
+        <Route path='/your-books' element={<Protected> <YourBooks /> </Protected>} />
         <Route path='/books/:id' element={<Protected> <SwapPage /> </Protected>} />
       </Routes>
     </div>
@@ -35,23 +36,18 @@ export default App;
 
 
 
-
-// Make link and Route to book page with it's ID
-// Email form to contact owner of book
-// delete function after request is completed ??
-
+// fix user id route - how to connect Props.user & the index route 
+// user books page that displays book's with the user's own id w/ delete button (MAKE DELETE ROUTE)
+// implement email form with Mailjet
 
 
 
-
-
-
-
-
+// style both forms nicely 
 
 
 // make form submit open browse page 
-// filters for browse page 
-// style form nicely 
+// page refresh when deleted 
 // fix book tiles text 
 // add key props to list 
+
+// filters for browse page ? 
