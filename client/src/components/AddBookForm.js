@@ -65,7 +65,7 @@ export default function AddBookForm(props) {
         
 
 		<lable>Genre:</lable>
-		<select name="genre" id="genre" onChange={e => setGenre(e.target.value)} >
+		<select className='selectAdd' name="genre" id="genre" onChange={e => setGenre(e.target.value)} >
 		<option value=""></option>
         <option value="Action and adventure">Action and adventure</option>
         <option value="Coming-of-age">Coming-of-age</option>
@@ -89,7 +89,7 @@ export default function AddBookForm(props) {
 		 </select>
 
 		 <lable>Language:</lable>
-		 <select name='language' id='language' onChange={e => setLanguage(e.target.value)}>
+		 <select className='selectAdd' name='language' id='language' onChange={e => setLanguage(e.target.value)}>
 		 <option value="English">English</option>
 		 <option value="French">French</option>
 		 <option value="German">German</option>
@@ -99,8 +99,8 @@ export default function AddBookForm(props) {
 
 		 </select>
 
-		 <lable> Tell us about the book (but don't give it away!) </lable>
-		 <input type='text' maxLength="25" onChange={e => setDescription(e.target.value)}/>
+		 <lable> Tell us about the book (without giving it away, of course) </lable>
+		 <input className='inputAdd' type='text' maxLength="25" onChange={e => setDescription(e.target.value)}/>
    
 		<button type="submit"> Add this Book</button>
 
