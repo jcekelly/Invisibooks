@@ -15,7 +15,7 @@ export default function AllBooksList() {
 
     const getAllBooks = () => {
         axios
-          .get(`/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`http://localhost:5005/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };
@@ -36,9 +36,11 @@ export default function AllBooksList() {
             <ul>
             <li>{book.fiction ? <p>Fiction</p> : <p>Non-Fiction</p>}</li> 
             <li> <p className='quote-text'> "{book.description}" </p> </li>
-            <li> '{book.genre}' </li>
+            <li> {book.genre} </li>
             <li> {book.language} </li> 
-            <Link to={`/books/${book._id}`}> Request Book </Link>
+            <div className='requestDiv'>
+            <Link className='requestLink' to={`/books/${book._id}`}> Request </Link>
+            </div>
 
 
             </ul>

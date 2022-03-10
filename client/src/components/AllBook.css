@@ -18,7 +18,7 @@ li {
     display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .quote-text {
@@ -37,3 +37,17 @@ li {
     
 }
 
+.requestLink {
+    border-style: dashed;
+    border-width: 0.5px;
+    /* border-radius: 100px; */
+    margin-bottom: 40px;
+    height: 30px;
+    
+  }
+
+  .requestDiv {
+      /* background-color: red; */
+      height: 30px;
+      margin: 30px;
+  }
