@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+const API_URL = "https://invisibooks.herokuapp.com/";
+
+
 export default function Signup() {
 
 	const [email, setEmail] = useState('');
@@ -14,7 +17,7 @@ export default function Signup() {
 	const handleSubmit = e => {
 		e.preventDefault()
 		const requestBody = { email, password, swapRequests, swapsRequested }
-		axios.post('http://localhost:5005/auth/signup', requestBody)
+		axios.post(`${API_URL}auth/signup`, requestBody)
 			.then(response => {
 				// redirect to login
 				navigate('/login')

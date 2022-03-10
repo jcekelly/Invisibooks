@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/auth'
 
-
-const API_URL = "http://localhost:5005";
+const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 export default function AddBookForm(props) {
@@ -27,7 +26,7 @@ export default function AddBookForm(props) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		
-		axios.post(`http://localhost:5005/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.post(`${API_URL}/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
 	      console.log(response)
 		  })

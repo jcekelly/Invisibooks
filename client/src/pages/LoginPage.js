@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../context/auth'
 
+const API_URL = "https://invisibooks.herokuapp.com/";
+
+
 export default function Login() {
 
 	const [email, setEmail] = useState('');
@@ -17,7 +20,7 @@ export default function Login() {
 	const handleSubmit = e => {
 		e.preventDefault()
 		const requestBody = { email, password }
-		axios.post('http://localhost:5005/auth/login', requestBody)
+		axios.post(`${API_URL}/auth/login`, requestBody)
 			.then(response => {
 				const token = response.data.authToken
 				console.log('user', response.data)

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
+const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 
@@ -16,7 +17,7 @@ export default function SwapCard() {
 
 
 	useEffect(() => {
-		axios.get(`http://localhost:5005/api/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.get(`${API_URL}/api/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log(response)
 				setBook(response.data)
