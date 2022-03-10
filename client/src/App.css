@@ -64,6 +64,7 @@ form {
   border-width: 3px;
   border-style: dotted;
   padding: 40px;
+  max-width: 200px;
 }
 
 nav {
