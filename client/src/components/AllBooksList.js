@@ -32,7 +32,7 @@ export default function AllBooksList() {
 
 			<h1>Book Shelf</h1>
       <div className='listDiv'>
-			{books.map(book => 
+			{books && books.map(book => 
       
             <ul>
             <li>{book.fiction ? <p>Fiction</p> : <p>Non-Fiction</p>}</li> 
