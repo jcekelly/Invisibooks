@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
-const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 
@@ -16,7 +15,7 @@ export default function AllBooksList() {
 
     const getAllBooks = () => {
         axios
-          .get(`${API_URL}/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };

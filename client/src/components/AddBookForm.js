@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/auth'
 
-const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 export default function AddBookForm(props) {
@@ -26,7 +25,7 @@ export default function AddBookForm(props) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		
-		axios.post(`${API_URL}/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.post(`/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
 	      console.log(response)
 		  })
@@ -39,7 +38,7 @@ export default function AddBookForm(props) {
 
 	  const getAllBooks = () => {
         axios
-          .get(`${API_URL}/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => console.log(response.data))
           .catch((error) => console.log(error));
       };

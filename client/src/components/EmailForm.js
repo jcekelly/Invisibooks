@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { AuthContext } from '../context/auth'; 
 import axios from 'axios';
 
-const API_URL = "https://invisibooks.herokuapp.com/";
 
  export default function RequestBook () {
     const form = useRef();
@@ -16,7 +15,7 @@ const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 	useEffect(() => {
-		axios.get(`${API_URL}/api/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.get(`/api/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				console.log(response)
 				setBook(response.data)

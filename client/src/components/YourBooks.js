@@ -3,7 +3,6 @@ import axios from 'axios';
 import NavSideBar from './NavSideBar';
 import { Navigate } from 'react-router-dom';
 
-const API_URL = "https://invisibooks.herokuapp.com/";
 
 
 
@@ -20,7 +19,7 @@ export default function YourBooks(props) {
 
     const getAllBooks = () => {
         axios
-          .get(`${API_URL}/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };
@@ -49,7 +48,7 @@ export default function YourBooks(props) {
 
 
 
-			<button onClick={ () => {axios.delete(`${API_URL}/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+			<button onClick={ () => {axios.delete(`/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(deletedBook => {
                 console.log(deletedBook)
 				window.location.reload()
