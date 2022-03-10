@@ -15,7 +15,7 @@ export default function AllBooksList() {
 
     const getAllBooks = () => {
         axios
-          .get(`http://localhost:5005/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`/api/`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };

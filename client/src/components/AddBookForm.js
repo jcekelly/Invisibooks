@@ -25,7 +25,7 @@ export default function AddBookForm(props) {
 	const handleSubmit = e => {
 		e.preventDefault()
 		
-		axios.post(`http://localhost:5005/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
+		axios.post(`/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
 	      console.log(response)
 		  navigate('/browse-all')

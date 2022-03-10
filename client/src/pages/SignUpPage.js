@@ -14,7 +14,7 @@ export default function Signup() {
     e.preventDefault();
     const requestBody = { email, password, swapRequests, swapsRequested };
     axios
-      .post(`http://localhost:5005/auth/signup`, requestBody)
+      .post(`/auth/signup`, requestBody)
       .then((response) => {
         // redirect to login
         navigate("/login");
