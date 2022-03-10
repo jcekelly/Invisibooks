@@ -16,7 +16,7 @@ export default function Login() {
     e.preventDefault();
     const requestBody = { email, password };
     axios
-      .post(`http://localhost:5005/auth/login`, requestBody)
+      .post(`/auth/login`, requestBody)
       .then((response) => {
         const token = response.data.authToken;
         console.log("user", response.data);

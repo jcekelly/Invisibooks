@@ -19,7 +19,7 @@ export default function YourBooks(props) {
 
     const getAllBooks = () => {
         axios
-          .get(`http://localhost:5005/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };

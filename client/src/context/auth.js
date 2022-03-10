@@ -28,7 +28,7 @@ function AuthProviderWrapper(props) {
 		// check local storage
 		const storedToken = localStorage.getItem('authToken')
 		if (storedToken) {
-			return axios.get(`http://localhost:5005/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
+			return axios.get(`/auth/verify`, { headers: { Authorization: `Bearer ${storedToken}` } })
 				.then(response => {
 					const user = response.data
 					setUser(user)
