@@ -34,6 +34,9 @@ export default function AddBookForm(props) {
 		  setGenre("");
 		  setLanguage("")
 		  getAllBooks()
+		  .then ( () => {
+			navigate('/browse-all')
+		  })
 	  };
 
 	  const getAllBooks = () => {
