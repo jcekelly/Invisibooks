@@ -49,7 +49,6 @@ export default function AddBookForm(props) {
    
     return (
 		<>
-		<p> Add Book </p>
 		<form onSubmit={handleSubmit}>
 
 
@@ -100,8 +99,8 @@ export default function AddBookForm(props) {
 
 		 </select>
 
-		 <lable> Why read this Book? </lable>
-		 <input type='text' maxLength="50" onChange={e => setDescription(e.target.value)}/>
+		 <lable> Tell us about the book (but don't give it away!) </lable>
+		 <input type='text' maxLength="25" onChange={e => setDescription(e.target.value)}/>
    
 		<button type="submit"> Add this Book</button>
 
