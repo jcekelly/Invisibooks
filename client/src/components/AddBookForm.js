@@ -43,9 +43,9 @@ export default function AddBookForm(props) {
           .catch((error) => console.log(error));
       };
 	
-       const routeChange = () => {
-		   navigate('/browse-all')
-	   }
+    //    const routeChange = () => {
+	// 	   navigate('/browse-all')
+	//    }
 
     return (
 		<>
@@ -103,7 +103,7 @@ export default function AddBookForm(props) {
 		 <lable> Why read this Book? </lable>
 		 <input type='text' maxLength="50" onChange={e => setDescription(e.target.value)}/>
    
-		<button type="submit" onClick={routeChange}> Add this Book</button>
+		<button type="submit"> Add this Book</button>
 
 		</form>		 
 		</>

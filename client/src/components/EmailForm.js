@@ -23,13 +23,7 @@ import axios from 'axios';
 			.catch(err => console.log(err))
 	}, [])
 
-    console.log('user', user)
-
-
-   if(book) {
-    console.log('book', book.creator.email)
-    }
-
+  
 
       
         const sendEmail = (e) => {
@@ -54,7 +48,7 @@ import axios from 'axios';
 
 <h4>I'm interested in the book you described as " {book.description} " </h4>
 
-<h4> If it's still availble, please send me an email and we can discuss collecting it / or organise postage. My emai is:  {user.email} </h4>
+<h4> If it's still availble, please send me an email and we can discuss collecting it / or organise postage. My email is:  {user.email} </h4>
 
 <input type="text" name="message" placeholder='Add a note' />
 
