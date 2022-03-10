@@ -28,15 +28,14 @@ export default function AddBookForm(props) {
 		axios.post(`/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
 	      console.log(response)
+		  window.location.reload(false)
 		  })
+		  
 		  .catch((error) => console.log(error));
 		  setFiction("");
 		  setGenre("");
 		  setLanguage("")
 		  getAllBooks()
-		  .then ( () => {
-			navigate('/browse-all')
-		  })
 	  };
 
 	  const getAllBooks = () => {
