@@ -1,12 +1,27 @@
-/* label {
-    padding: 30px;
-} */
-
-
-
-
 .fiction-radio {
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
+    margin: 5px;
+
+}
+
+
+
+input {
+  background-color: red;
+    border-width: 0px;
+  margin: 5px;
+  max-width: 150px;
+
+}
+
+select {
+    background-color: red;
+  border-width: 0px;
+    margin: 5px;
+    max-width: 150px;
+
+
+
 }
