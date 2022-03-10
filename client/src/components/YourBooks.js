@@ -19,7 +19,7 @@ export default function YourBooks(props) {
 
     const getAllBooks = () => {
         axios
-          .get(`/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
+          .get(`http://localhost:5005/api/my-books`, { headers: { Authorization: `Bearer ${storedToken}` } })
           .then((response) => setBooks(response.data))
           .catch((error) => console.log(error));
       };
@@ -48,7 +48,7 @@ export default function YourBooks(props) {
 
 
 
-			<button onClick={ () => {axios.delete(`/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+			<button onClick={ () => {axios.delete(`http://localhost:5005/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(deletedBook => {
                 console.log(deletedBook)
 				window.location.reload()
