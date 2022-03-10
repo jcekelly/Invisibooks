@@ -39,13 +39,11 @@ export default App;
 
 
 
-// Make email form better 
 
-// deploy 
+// deploy !!!!!!! !!!! !!!!!
 
-// write email template
 
-// style both forms 
+// style both forms nicely 
 
 // style nav, buttons 
 
