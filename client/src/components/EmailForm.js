@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { AuthContext } from './../context/auth'; 
+import { AuthContext } from '../context/auth'; 
 import axios from 'axios';
 
  export default function RequestBook () {
