@@ -28,7 +28,8 @@ export default function AddBookForm(props) {
 		axios.post(`/api/books`, { fiction, genre, language, description}, { headers: { Authorization: `Bearer ${storedToken}` } })
 		  .then((response) => {
 	      console.log(response)
-		  window.location.reload(false)
+		  navigate('/browse-all')
+		//   window.location.reload(false)
 		  })
 		  
 		  .catch((error) => console.log(error));
@@ -45,10 +46,7 @@ export default function AddBookForm(props) {
           .catch((error) => console.log(error));
       };
 	
-    //    const routeChange = () => {
-	// 	   navigate('/browse-all')
-	//    }
-
+   
     return (
 		<>
 		<p> Add Book </p>
