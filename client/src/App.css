@@ -61,10 +61,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-width: 3px;
-  border-style: dotted;
   padding: 40px;
-  max-width: 200px;
 }
 
 nav {
@@ -118,5 +115,4 @@ nav {
   padding-bottom: 20px;
 
 }
-
 
