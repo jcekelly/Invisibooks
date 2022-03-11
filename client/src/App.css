@@ -105,4 +105,18 @@ nav {
   margin-bottom: 50px;
 }
 
+.yourBookUl {
+  text-align: center;
+  list-style: none;
+  max-width: 200px;
+  min-width: 200px;
+  margin: 10px;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: pink;
+  border-style: dashed;
+  padding-bottom: 20px;
+
+}
+
 

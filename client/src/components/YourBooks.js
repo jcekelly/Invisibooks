@@ -40,7 +40,7 @@ export default function YourBooks(props) {
       <div className='listDiv'>
     
 			{books && books.map(book => 
-            <ul>
+            <ul className='yourBooksUl'>
             <li>{book.fiction ? <p>Fiction</p> : <p>Non-Fiction</p>}</li> 
             <li> <p className='quote-text'> "{book.description}" </p> </li>
             <li> '{book.genre}' </li>
@@ -48,7 +48,7 @@ export default function YourBooks(props) {
 
 
 
-			<button onClick={ () => {axios.delete(`http://localhost:5005/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+			<button onClick={ () => {axios.delete(`/api/book/${book._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
             .then(deletedBook => {
                 console.log(deletedBook)
 				window.location.reload()
