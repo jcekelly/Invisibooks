@@ -99,8 +99,8 @@ export default function AddBookForm(props) {
 
 		 </select>
 
-		 <lable> Tell us about the book (without giving it away, of course) </lable>
-		 <input className='inputAdd' type='text' maxLength="35" onChange={e => setDescription(e.target.value)}/>
+		 <lable> Tell us about the book in 45 characters or less, without giving it away! </lable>
+		 <input className='inputAdd' type='text' maxLength="45" onChange={e => setDescription(e.target.value)}/>
    
 		<button type="submit"> Add this Book</button>
 
