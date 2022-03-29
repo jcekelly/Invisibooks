@@ -6,7 +6,7 @@ The project was created in 6 days, at the end of the 9 week bootcamp, though we 
 
 I plan to continue developing this project soon - you can see the features and styling changes i'm planning on implementing below.
 
-The project also involved a lot of learning on the go & learning from mistakes - as such, the code is definitely not as clean or as optimised as I would like.
+The project also involved a lot of learning on the go & learning from mistakes - as such the code is definitely not as clean or as optimised as I would like.
 
 ## Installation
 
