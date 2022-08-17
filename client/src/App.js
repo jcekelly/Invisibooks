@@ -39,24 +39,3 @@ export default App;
 
 
 
-
-// deploy !!!!!!! !!!! !!!!!
-
-
-// style both forms nicely 
-
-// style nav, buttons 
-
-// style book cards 
-
-// filters ? 
-
-// think of a name? 
-
-
-
-
-
-
-
-
